@@ -3,43 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .project-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
-        .btn { background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; }
-    </style>
+    <title>Edwin Baiden | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Your Name</h1>
-        <p>Software Developer | Tech Enthusiast</p>
-        <a href="resume.pdf" target="_blank" class="btn">View My Resume</a>
-    </header>
+    <nav class="navbar">
+        <div class="logo">EDWEEN69</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="#projects" class="dropbtn">Projects ▾</a>
+                <div class="dropdown-content">
+                    <a href="https://github.com/edween69/project1">Autonomous Rover</a>
+                    <a href="https://github.com/edween69/project2">Smart Grid Sim</a>
+                    <a href="https://github.com/edween69/project3">Embedded Systems</a>
+                </div>
+            </li>
 
-    <hr>
+            <li><a href="resume.pdf" target="_blank" class="highlight-btn">Resume</a></li>
+        </ul>
+    </nav>
 
-    <section>
-        <h2>My Projects</h2>
-
-        <div class="project-card">
-            <h3>Project Name 1</h3>
-            <p>Description of what this project does and the tech stack used.</p>
-            <a href="https://github.com/yourusername/project-repo-link">View Code</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Project Name 2</h3>
-            <p>Description of another cool project.</p>
-            <a href="#">View Code</a>
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>ENGINEERING THE <span class="neon-text">FUTURE</span></h1>
+            <p>Edwin Baiden | Electrical Engineering & Robotics</p>
+            <p class="sub-text">Specializing in Power Electronics, Autonomous Systems, and C++.</p>
         </div>
     </section>
 
-    <footer>
-        <hr>
-        <p>Contact me at: <a href="mailto:email@example.com">email@example.com</a></p>
-    </footer>
+    <section id="projects" class="content-section">
+        <h2>Selected Works</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Autonomous Rover</h3>
+                <p>ROS-based navigation system using SLAM and Lidar.</p>
+                <div class="tags"><span>C++</span><span>ROS</span><span>Linux</span></div>
+            </div>
+            
+            <div class="card">
+                <h3>Power Inverter</h3>
+                <p>High-efficiency DC-AC inverter design for solar applications.</p>
+                <div class="tags"><span>MATLAB</span><span>PCB Design</span></div>
+            </div>
+
+            <div class="card">
+                <h3>RTOS Scheduler</h3>
+                <p>Custom real-time operating system scheduler for ARM Cortex-M.</p>
+                <div class="tags"><span>C</span><span>Assembly</span></div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
