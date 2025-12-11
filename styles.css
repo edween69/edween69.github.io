@@ -152,3 +152,68 @@ body {
     background-color: var(--neon-green);
     color: black !important;
 }
+
+/* --- MOBILE RESPONSIVENESS (Media Query) --- */
+@media screen and (max-width: 768px) {
+
+    /* 1. Stack the Navbar vertically */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        height: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 15px;
+        padding-top: 15px;
+        padding-left: 0; /* Remove default padding */
+    }
+
+    /* 2. Make the Dropdown mobile-friendly */
+    .dropdown {
+        width: 100%;
+        display: block; /* Takes up full width */
+    }
+
+    .dropbtn {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #333; /* separator line */
+    }
+
+    /* On mobile, we change the dropdown from "floating" to "embedded" */
+    .dropdown-content {
+        position: relative; /* Not floating anymore */
+        box-shadow: none;   /* Remove shadow */
+        background-color: #0a0a0a; /* Slightly darker */
+        width: 100%;
+        border: none;
+    }
+
+    /* Center the dropdown text on mobile */
+    .dropdown-content a {
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #1a1a1a;
+    }
+    
+    /* 3. Adjust Hero Text Size */
+    .hero h1 {
+        font-size: 1.8rem; /* Smaller font so it fits */
+        padding: 0 10px;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+        padding: 0 20px;
+    }
+
+    /* 4. Fix Grid Layout for Cards */
+    .grid-container {
+        grid-template-columns: 1fr; /* Force 1 column on mobile */
+    }
+}
