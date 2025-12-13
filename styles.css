@@ -68,6 +68,17 @@ body {
     color: var(--neon-green);  
 }
 
+/* Hamburger button (shown on mobile) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
 /* Resume Button Style */
 .highlight-btn {
     border: 1px solid var(--neon-green); 
@@ -116,9 +127,14 @@ body {
     display: block;            
 }
 
+/* Also open dropdown when focused (keyboard/touch) */
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
 /* Logo Styling */
 .cyber-logo {
-    height: 50px;           /* Adjust size to fit the bar */
+    height: 55px;           /* Adjust size to fit the bar */
     width: auto;
     filter: drop-shadow(0 0 5px #00ff9d); /* The Neon Glow Effect */
     transition: filter 0.3s ease;
@@ -266,6 +282,63 @@ body {
     /* This Magic Code makes it responsive automatically: */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+}
+
+/* --- 6. MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 8px;
+        border-top: 1px solid #222;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        margin-top: 6px;
+        border-left: 2px solid var(--neon-green);
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 24px;
+        background-size: 28px 28px; /* tighter grid */
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+    }
+
+    .projects-section {
+        padding: 40px 18px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
 }
 
 /* --- THE CARD DESIGN --- */

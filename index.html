@@ -35,7 +35,8 @@
         <div class="logo">
             <img src="logo.png" alt="EB Logo" class="cyber-logo">
         </div>
-        <ul class="nav-links">
+            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="primary-navigation">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li class="dropdown">
@@ -118,4 +119,24 @@
     </section>
 
 </body>
+<script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-navigation');
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+    }
+
+    // Improve dropdown accessibility: toggle aria-expanded on focus/blur
+    const dropBtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown');
+    if (dropBtn && dropdown) {
+        dropBtn.addEventListener('focus', () => dropBtn.setAttribute('aria-expanded', 'true'));
+        dropBtn.addEventListener('blur', () => dropBtn.setAttribute('aria-expanded', 'false'));
+    }
+</script>
 </html>
